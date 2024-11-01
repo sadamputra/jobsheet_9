@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class ArrayRataNilai21 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Meminta pengguna untuk memasukkan jumlah mahasiswa
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        int jumlahMahasiswa = scanner.nextInt();
+
+        // Membuat array dengan ukuran berdasarkan jumlah mahasiswa
+        double[] nilaiMahasiswa = new double[jumlahMahasiswa];
+        double total = 0;
+        int jumlahLulus = 0; // Variabel untuk menghitung jumlah mahasiswa yang lulus
+
+        // Mengambil input nilai mahasiswa
+        System.out.println("Masukkan nilai mahasiswa:");
+        for (int i = 0; i < jumlahMahasiswa; i++) {
+            System.out.print("Nilai mahasiswa ke-" + (i + 1) + ": ");
+            nilaiMahasiswa[i] = scanner.nextDouble();
+            total += nilaiMahasiswa[i]; // Menjumlahkan nilai
+
+            // Mengecek apakah mahasiswa lulus
+            if (nilaiMahasiswa[i] > 70) {
+                jumlahLulus++; // Increment jumlah mahasiswa yang lulus
+            }
+        }
+
+        // Menghitung rata-rata
+        double rataRata = total / jumlahMahasiswa;
+
+        // Menampilkan hasil
+        System.out.println("Total nilai: " + total);
+        System.out.println("Rata-rata nilai: " + rataRata);
+        System.out.println("Jumlah mahasiswa yang lulus: " + jumlahLulus);
+
+        scanner.close();
+    }
+}
