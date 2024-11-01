@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class ArrayNilai21 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Masukkan jumlah nilai yang ingin dimasukkan: ");
+        int n = sc.nextInt(); // Mendapatkan jumlah nilai yang ingin dimasukkan
+        int[] nilaiAkhir = new int[n]; // Membuat array dengan ukuran yang ditentukan
+
+        // Input loop
+        for (int i = 0; i < nilaiAkhir.length; i++) {
+            System.out.print("Masukkan nilai akhir ke-" + (i + 1) + ": ");
+            nilaiAkhir[i] = sc.nextInt(); // Memasukkan nilai ke dalam array
+        }
+
+        // Output status kelulusan
+        System.out.println("\nStatus Kelulusan Mahasiswa:");
+        for (int i = 0; i < nilaiAkhir.length; i++) {
+            // Memeriksa apakah mahasiswa lulus atau tidak
+            if (nilaiAkhir[i] >= 70) {
+                System.out.println("Mahasiswa ke-" + (i + 1) + " dengan nilai " + nilaiAkhir[i] + " - Lulus");
+            } else {
+                System.out.println("Mahasiswa ke-" + (i + 1) + " dengan nilai " + nilaiAkhir[i] + " - Tidak Lulus");
+            }
+        }
+
+        sc.close(); 
+    }
+}
